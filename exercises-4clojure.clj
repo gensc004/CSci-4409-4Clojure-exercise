@@ -79,7 +79,22 @@ filter odd?
          nil)) x 0 ) 
    (interleaveMain (rest x) y (if c (+ c 1) 1)) ) ) )) t p) '())))
 
+;; Problem 44
+(fn rotate[x, y] (
+      if (< x 0)
+        (rotate (+ x 1) (concat (list (last y)) (subvec (vec y) 0 (- (count y) 1))))
+        (if (> x 0)
+          (rotate (- x 1) (concat (rest y) (list (first y))))
+          y
+        )
+      )
+)
 
+;; Problem 46
+(fn [x] ((fn [y z] (x z y))))
+
+;; Problem 47
+4
 
 
 
