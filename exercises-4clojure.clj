@@ -66,7 +66,18 @@ filter odd?
 (fn interp[x, y] (if (> (count y) 1) (concat (vector (get y 0) x) (interp x (subvec y 1 (count y)))) (vector (get y 0))))
 
 ;; Problem 43
-
+(fn lol[t, p] (reverse ((fn blah [z, f] 
+      (if (> (count z) 1) 
+        (blah (first (rest z)) (conj f (first z))) 
+        (conj f (first z)))) ((fn interleaveMain[x, y & [c]]
+  (if (= c y)
+  nil
+  (remove nil? (list   
+   ((fn interleaveHelper[l, c] 
+      (if (< c (count l)) 
+         (concat (list (nth l c)) (interleaveHelper l (+ c y))) 
+         nil)) x 0 ) 
+   (interleaveMain (rest x) y (if c (+ c 1) 1)) ) ) )) t p) '())))
 
 
 
