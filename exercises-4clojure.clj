@@ -33,3 +33,43 @@
 
 (= (#(* 2 %) 11) 22)
 
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
+;; Problem #10
+20
+
+;; problem 16
+(fn [x] (str "Hello, " x "!"))
+
+;; problem 17
+'(6 7 8)
+
+;; Problem 18
+'(6 7)
+
+;; Problem 20
+#(nth % (- (count %) 2))
+
+;; Problem 21
+(fn nthy[x, y] (if (> y 0) (nthy (rest x) (- y 1)) (first x)))
+
+;; Problem 23
+(fn reverseList[x] (if (= (peek (vec x)) nil) [] (conj (reverseList (subvec (vec x) 1 (count (vec x)))) (get (vec x) 0) )))
+
+;; Problem 25
+filter odd?
+
+;; Problem 37
+"ABC"
+
+;; Problem 40
+(fn interp[x, y] (if (> (count y) 1) (concat (vector (get y 0) x) (interp x (subvec y 1 (count y)))) (vector (get y 0))))
+
+;; Problem 43
+
+
+
+
+
+
+
